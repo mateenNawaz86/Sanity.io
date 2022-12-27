@@ -5,9 +5,9 @@ export default {
   title: 'Blog',
   fields: [
     {
-      name: 'name',
+      name: 'title',
       type: 'string',
-      title: 'Name',
+      title: 'Title',
     },
     {
       name: 'content',
@@ -37,6 +37,11 @@ export default {
         },
       ],
     },
+    {
+      name: 'metadesc',
+      type: 'string',
+      title: 'Meta Description',
+    },
 
     {
       title: 'Blog Image',
@@ -54,13 +59,25 @@ export default {
             isHighlighted: true, // <-- make this field easily accessible
           },
         },
-       
       ],
     },
+
     {
       title: 'Created At',
       name: 'createdAt',
       type: 'datetime',
+    },
+    {
+      name: 'author',
+      type: 'object',
+      fields: [
+        {
+          title: 'Author',
+          name: 'author',
+          type: 'reference',
+          to: [{type: 'author'}],
+        },
+      ],
     },
   ],
 }
