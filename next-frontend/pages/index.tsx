@@ -1,11 +1,19 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import { createClient } from "next-sanity";
-import PortableText from "react-portable-text";
-
-const inter = Inter({ subsets: ["latin"] });
+import imageUrlBuilder from "@sanity/image-url";
 
 export default function Home({ blogs }) {
+  const client = createClient({
+    projectId: "o7156ep0",
+    dataset: "production",
+    useCdn: false,
+  });
+
+  const builder = imageUrlBuilder(client);
+  // useEffect(() => {
+  //   // console.log(builder.image(item.blogimage).width(200).url());
+  // }, []);
+
   return (
     <>
       <Head>
@@ -18,7 +26,7 @@ export default function Home({ blogs }) {
           name="viewport"
         />
 
-        <title>Homepage | Atom Template</title>
+        <title>Mateen's Portfolio</title>
 
         <meta property="og:title" content="Homepage | Atom Template" />
 
@@ -33,18 +41,11 @@ export default function Home({ blogs }) {
           content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
 
-        <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
-
         <meta name="theme-color" content="#5540af" />
-
         <meta property="og:site_name" content="Atom Template" />
-
         <meta property="og:image" content="//assets/img/social.jpg" />
-
         <meta name="twitter:card" content="summary_large_image" />
-
         <meta name="twitter:site" content="@tailwindmade" />
-
         <link
           crossOrigin="crossorigin"
           href="https://fonts.gstatic.com"
@@ -262,17 +263,16 @@ export default function Home({ blogs }) {
                     Who am I?
                   </h2>
                   <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                    I'm Christy Smith, a Web Designer & Photographer
+                    I'm Mateen Nawaz, a MERN Stack Developer
                   </h4>
                   <p className="pt-6 font-body leading-relaxed text-grey-20">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
+                    Energetic, results-driven individual with proven web
+                    development skills using the latest technologies.
+                    Detail-oriented professional with a highly learning
+                    attitude, strong leadership, relationship-building skills
+                    and ability to perform well in Team while fully utilizing
+                    skills to achieve goals with making significant change to
+                    the success of company.
                   </p>
                   <div className="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
                     <div className="flex items-center justify-center sm:justify-start">
@@ -290,9 +290,7 @@ export default function Home({ blogs }) {
                       <a href="/" className="pl-4">
                         <i className="bx bxl-twitter text-2xl text-primary hover:text-yellow"></i>
                       </a>
-                      <a href="/" className="pl-4">
-                        <i className="bx bxl-dribbble text-2xl text-primary hover:text-yellow"></i>
-                      </a>
+
                       <a href="/" className="pl-4">
                         <i className="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
                       </a>
@@ -858,30 +856,36 @@ export default function Home({ blogs }) {
                   Check out my latest posts!
                 </h4>
                 <div className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
-                  <a href="/post" className="shadow">
-                    <div
-                      style={{
-                        backgroundImage: "url(/assets/img/post-01.png)",
-                      }}
-                      className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-                    >
-                      <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-                      <span className="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">
-                        Read More
-                      </span>
-                    </div>
-                    <div className="bg-white py-6 px-5 xl:py-8">
-                      <span className="block font-body text-lg font-semibold text-black">
-                        How to become a frontend developer
-                      </span>
-                      <span className="block pt-2 font-body text-grey-20">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </span>
-                    </div>
-                  </a>
-                  <a href="/post" className="shadow">
+                  {blogs.map((item, index) => {
+                    return (
+                      <a key={index} href="/post" className="shadow">
+                        <div
+                          style={{
+                            backgroundImage: `url(${
+                              builder.image(item.blogimage).width(200).url() ||
+                              "/assets/img/post-02.png)"
+                            })`,
+                          }}
+                          className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
+                        >
+                          <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
+                          <span className="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">
+                            Read More
+                          </span>
+                        </div>
+                        <div className="bg-white py-6 px-5 xl:py-8">
+                          <span className="block font-body text-lg font-semibold text-black">
+                            {item.title}
+                          </span>
+                          <span className="block pt-2 font-body text-grey-20">
+                            {item.metadesc}
+                          </span>
+                        </div>
+                      </a>
+                    );
+                  })}
+
+                  {/* <a href="/post" className="shadow">
                     <div
                       style={{
                         backgroundImage: "url(/assets/img/post-02.png)",
@@ -926,7 +930,7 @@ export default function Home({ blogs }) {
                         magna aliqua.
                       </span>
                     </div>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -980,7 +984,7 @@ export default function Home({ blogs }) {
                     </p>
                   </div>
                   <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                    (+881) 111 222 333
+                    +92 301 5167599
                   </p>
                 </div>
                 <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
@@ -991,7 +995,7 @@ export default function Home({ blogs }) {
                     </p>
                   </div>
                   <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                    name@mydomain.com
+                    mateenfuuast@gmail.com
                   </p>
                 </div>
                 <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
@@ -1002,7 +1006,7 @@ export default function Home({ blogs }) {
                     </p>
                   </div>
                   <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                    123 New York D Block 1100, 2011 USA
+                    Islamabad, Pakistan
                   </p>
                 </div>
               </div>
@@ -1073,7 +1077,7 @@ export async function getServerSideProps(context) {
   const client = createClient({
     projectId: "o7156ep0",
     dataset: "production",
-    useCdn: true,
+    useCdn: false,
   });
 
   // GROQ code below. GROQ is simply use to run a sanity query
@@ -1081,7 +1085,7 @@ export async function getServerSideProps(context) {
 
   // Here fetch is a sanity fetch function
   const blogs = await client.fetch(query);
-
+  console.log(blogs.length);
   // return a list of blogs
   return {
     props: {
