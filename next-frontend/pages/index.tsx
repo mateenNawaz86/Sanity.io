@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
+import Link from "next/link";
 
 export default function Home({ blogs }) {
   const client = createClient({
@@ -95,60 +96,72 @@ export default function Home({ blogs }) {
           >
             <div className="container flex items-center justify-between">
               <div>
-                <a href="/">
+                <Link href="/">
                   <h2 className="cursor-pointer text-2xl font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
                     Mateen
                   </h2>
-                </a>
+                </Link>
               </div>
               <div className="hidden lg:block">
                 <ul className="flex items-center">
                   <li className="group pl-6">
-                    <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-                      About
-                    </span>
+                    <Link href="#about" scroll={false}>
+                      <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                        About
+                      </span>
 
-                    <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                    </Link>
                   </li>
 
                   <li className="group pl-6">
-                    <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-                      Services
-                    </span>
+                    <Link href="#services" scroll={false}>
+                      <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                        Services
+                      </span>
 
-                    <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                    </Link>
                   </li>
 
                   <li className="group pl-6">
-                    <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-                      Skills
-                    </span>
+                    <Link href="#projects" scroll={false}>
+                      <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                        Projects
+                      </span>
 
-                    <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                    </Link>
                   </li>
 
                   <li className="group pl-6">
-                    <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-                      Experience
-                    </span>
+                    <Link href="#experience" scroll={false}>
+                      <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                        Experience
+                      </span>
 
-                    <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                    </Link>
                   </li>
 
                   <li className="group pl-6">
-                    <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-                      Blog
-                    </span>
+                    <Link href="#blog" scroll={false}>
+                      <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                        Blog
+                      </span>
 
-                    <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                    </Link>
                   </li>
 
                   <li className="group pl-6">
-                    <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-                      Contact
-                    </span>
+                    <Link href="#contact" scroll={false}>
+                      <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                        Contact
+                      </span>
 
-                    <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -525,9 +538,9 @@ export default function Home({ blogs }) {
               </div>
             </div>
 
-            <div className="container py-16 md:py-20" id="portfolio">
+            <div className="container py-16 md:py-20" id="projects">
               <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-                Check out my Portfolio
+                Check out my Projects
               </h2>
               <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
                 Here's what I have done with the past
@@ -627,7 +640,7 @@ export default function Home({ blogs }) {
               </div>
             </div>
 
-            <div className="container py-16 md:py-20" id="work">
+            <div className="container py-16 md:py-20" id="experience">
               <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                 My work experience
               </h2>
@@ -1085,7 +1098,6 @@ export async function getServerSideProps(context) {
 
   // Here fetch is a sanity fetch function
   const blogs = await client.fetch(query);
-  console.log(blogs.length);
   // return a list of blogs
   return {
     props: {
