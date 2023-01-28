@@ -2,6 +2,7 @@ import Head from "next/head";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 
 export default function Home({ blogs }) {
   const client = createClient({
@@ -110,7 +111,7 @@ export default function Home({ blogs }) {
                         About
                       </span>
 
-                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" />
                     </Link>
                   </li>
 
@@ -120,7 +121,7 @@ export default function Home({ blogs }) {
                         Services
                       </span>
 
-                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" />
                     </Link>
                   </li>
 
@@ -130,7 +131,7 @@ export default function Home({ blogs }) {
                         Projects
                       </span>
 
-                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" />
                     </Link>
                   </li>
 
@@ -140,7 +141,7 @@ export default function Home({ blogs }) {
                         Experience
                       </span>
 
-                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" />
                     </Link>
                   </li>
 
@@ -150,7 +151,7 @@ export default function Home({ blogs }) {
                         Blog
                       </span>
 
-                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" />
                     </Link>
                   </li>
 
@@ -160,14 +161,14 @@ export default function Home({ blogs }) {
                         Contact
                       </span>
 
-                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                      <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" />
                     </Link>
                   </li>
                 </ul>
               </div>
               <div className="block lg:hidden">
                 <button>
-                  <i className="bx bx-menu text-4xl text-white"></i>
+                  <i className="bx bx-menu text-4xl text-white" />
                 </button>
               </div>
             </div>
@@ -1085,7 +1086,6 @@ export default function Home({ blogs }) {
 }
 
 // code for connecting to sanity server
-
 export async function getServerSideProps(context) {
   const client = createClient({
     projectId: "o7156ep0",
