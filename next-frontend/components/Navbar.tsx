@@ -9,7 +9,7 @@ const Navbar = (props: Props) => {
       <div className="container flex items-center justify-between ">
         <div>
           <Link href="/">
-            <h2 className="cursor-pointer text-2xl font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300 ">
+            <h2 className="cursor-pointer text-2xl font-header font-semibold uppercase text-white  hover:text-orange-600 hover:duration-300">
               Mateen
             </h2>
           </Link>
@@ -18,7 +18,7 @@ const Navbar = (props: Props) => {
           <ul className="flex items-center">
             <li className="group pl-6">
               <Link href="#about" scroll={false}>
-                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                   About
                 </span>
 
@@ -28,7 +28,7 @@ const Navbar = (props: Props) => {
 
             <li className="group pl-6">
               <Link href="#services" scroll={false}>
-                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                   Services
                 </span>
 
@@ -38,7 +38,7 @@ const Navbar = (props: Props) => {
 
             <li className="group pl-6">
               <Link href="#projects" scroll={false}>
-                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                   Projects
                 </span>
 
@@ -48,7 +48,7 @@ const Navbar = (props: Props) => {
 
             <li className="group pl-6">
               <Link href="#experience" scroll={false}>
-                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                   Experience
                 </span>
 
@@ -58,7 +58,7 @@ const Navbar = (props: Props) => {
 
             <li className="group pl-6">
               <Link href="#blog" scroll={false}>
-                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                   Blog
                 </span>
 
@@ -68,7 +68,7 @@ const Navbar = (props: Props) => {
 
             <li className="group pl-6">
               <Link href="#contact" scroll={false}>
-                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+                <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                   Contact
                 </span>
 
@@ -79,7 +79,7 @@ const Navbar = (props: Props) => {
         </div>
         <div className="block lg:hidden">
           <button>
-            <i className="bx bx-menu text-4xl text-white hover:text-orange-600 hover:duration-300" />
+            <i className="bx bx-menu text-4xl text-white " />
           </button>
         </div>
       </div>
@@ -92,37 +92,37 @@ const Navbar = (props: Props) => {
 
           <ul className="mt-8 flex flex-col">
             <li className="py-2">
-              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                 About
               </span>
             </li>
 
             <li className="py-2">
-              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                 Services
               </span>
             </li>
 
             <li className="py-2">
-              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                 Skills
               </span>
             </li>
 
             <li className="py-2">
-              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                 Experience
               </span>
             </li>
 
             <li className="py-2">
-              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                 Blog
               </span>
             </li>
 
             <li className="py-2">
-              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
+              <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white ">
                 Contact
               </span>
             </li>

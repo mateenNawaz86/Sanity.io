@@ -2,7 +2,6 @@ import Head from "next/head";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
 
 export default function Home({ blogs }) {
   const client = createClient({
@@ -870,9 +869,13 @@ export default function Home({ blogs }) {
                   Check out my latest posts!
                 </h4>
                 <div className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
-                  {blogs.map((item, index) => {
+                  {blogs.map((item) => {
                     return (
-                      <a key={index} href="/post" className="shadow">
+                      <Link
+                        key={item.slug.current}
+                        href={"/blog/" + item.slug.current}
+                        className="shadow"
+                      >
                         <div
                           style={{
                             backgroundImage: `url(${
@@ -895,7 +898,7 @@ export default function Home({ blogs }) {
                             {item.metadesc}
                           </span>
                         </div>
-                      </a>
+                      </Link>
                     );
                   })}
 
@@ -1094,7 +1097,7 @@ export async function getServerSideProps(context) {
   });
 
   // GROQ code below. GROQ is simply use to run a sanity query
-  const query = `*[_type == "blog" ]`;
+  const query = `*[_type == "blog" ][0...3]`;
 
   // Here fetch is a sanity fetch function
   const blogs = await client.fetch(query);

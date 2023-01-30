@@ -2,7 +2,8 @@ import React from "react";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Navbar from "../components/Navbar";
-
+import HeadContent from "../components/HeadContent";
+import Footer from "../components/Footer";
 type Props = {};
 
 const Blog = ({ blogs }) => {
@@ -15,6 +16,7 @@ const Blog = ({ blogs }) => {
   const builder = imageUrlBuilder(client);
   return (
     <>
+      <HeadContent />
       <Navbar />
       <div className="bg-grey-50" id="blog">
         <div className="container mx-auto py-16 md:py-20">
@@ -56,6 +58,7 @@ const Blog = ({ blogs }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
