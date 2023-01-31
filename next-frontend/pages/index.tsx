@@ -1089,7 +1089,7 @@ export default function Home({ blogs }) {
 }
 
 // code for connecting to sanity server
-export async function getServerSideProps(context) {
+export const getServerSideProps = async (context) => {
   const client = createClient({
     projectId: "o7156ep0",
     dataset: "production",
