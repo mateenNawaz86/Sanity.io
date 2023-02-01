@@ -15,16 +15,16 @@ const Footer = (props: Props) => {
           </p>
           <div className="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
             <Link href="/">
-              <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
+              <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow" />
             </Link>
             <Link href="/" className="pl-4">
-              <i className="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
+              <i className="bx bxl-twitter text-2xl text-white hover:text-yellow" />
             </Link>
             <Link href="/" className="pl-4">
-              <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+              <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow" />
             </Link>
             <Link href="/" className="pl-4">
-              <i className="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
+              <i className="bx bxl-instagram text-2xl text-white hover:text-yellow" />
             </Link>
           </div>
         </div>

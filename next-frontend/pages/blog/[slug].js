@@ -112,7 +112,7 @@ const Post = ({ blog, author }) => {
 
               <div className="mt-10 flex justify-between border-t border-lila py-12">
                 <Link href="/" className="flex items-center">
-                  <i className="bx bx-left-arrow-alt text-2xl text-primary"></i>
+                  <i className="bx bx-left-arrow-alt text-2xl text-primary" />
                   <span className="block pl-2 font-body text-lg font-bold uppercase text-primary md:pl-5">
                     Previous Post
                   </span>
@@ -121,7 +121,7 @@ const Post = ({ blog, author }) => {
                   <span className="block pr-2 font-body text-lg font-bold uppercase text-primary md:pr-5">
                     Next Post
                   </span>
-                  <i className="bx bx-right-arrow-alt text-2xl text-primary"></i>
+                  <i className="bx bx-right-arrow-alt text-2xl text-primary" />
                 </Link>
               </div>
               <div className="flex flex-col items-center border-t border-lila py-12 pt-12 md:flex-row md:items-start xl:pb-20">
@@ -148,7 +148,7 @@ const Post = ({ blog, author }) => {
                       <i className="bx bxl-facebook-square text-2xl text-primary hover:text-yellow" />
                     </Link>
                     <Link href="/" className="pl-4">
-                      <i className="bx bxl-twitter text-2xl text-primary hover:text-yellow"></i>
+                      <i className="bx bxl-twitter text-2xl text-primary hover:text-yellow" />
                     </Link>
                     <Link href="/" className="pl-4">
                       <i className="bx bxl-linkedin text-2xl text-primary hover:text-yellow" />

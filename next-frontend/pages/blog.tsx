@@ -4,6 +4,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import Navbar from "../components/Navbar";
 import HeadContent from "../components/HeadContent";
 import Footer from "../components/Footer";
+import Link from "next/link";
 type Props = {};
 
 const Blog = ({ blogs }) => {
@@ -29,7 +30,7 @@ const Blog = ({ blogs }) => {
           <div className="mx-auto grid w-full grid-cols-1 gap-6  pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
             {blogs.map((item, index) => {
               return (
-                <a key={index} href="/post" className="shadow">
+                <Link key={index} href="/post" className="shadow">
                   <div
                     style={{
                       backgroundImage: `url(${
@@ -52,7 +53,7 @@ const Blog = ({ blogs }) => {
                       {item.metadesc}
                     </span>
                   </div>
-                </a>
+                </Link>
               );
             })}
           </div>

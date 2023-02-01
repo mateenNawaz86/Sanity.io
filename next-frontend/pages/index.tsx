@@ -547,7 +547,7 @@ export default function Home({ blogs }) {
               </h3>
 
               <div className="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
-                <a
+                <Link
                   href="/"
                   className="mx-auto transform transition-all hover:scale-105 md:mx-0"
                 >
@@ -556,8 +556,8 @@ export default function Home({ blogs }) {
                     className="w-full shadow"
                     alt="portfolio image"
                   />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/"
                   className="mx-auto transform transition-all hover:scale-105 md:mx-0"
                 >
@@ -566,8 +566,8 @@ export default function Home({ blogs }) {
                     className="w-full shadow"
                     alt="portfolio image"
                   />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/"
                   className="mx-auto transform transition-all hover:scale-105 md:mx-0"
                 >
@@ -576,8 +576,8 @@ export default function Home({ blogs }) {
                     className="w-full shadow"
                     alt="portfolio image"
                   />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/"
                   className="mx-auto transform transition-all hover:scale-105 md:mx-0"
                 >
@@ -586,7 +586,7 @@ export default function Home({ blogs }) {
                     className="w-full shadow"
                     alt="portfolio image"
                   />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -1064,21 +1064,19 @@ export default function Home({ blogs }) {
                 © Copyright 2022. All right reserved, ATOM.
               </p>
               <div className="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-                <a href="/">
+                <Link href="/">
                   <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="/" className="pl-4">
+                </Link>
+                <Link href="/" className="pl-4">
                   <i className="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="/" className="pl-4">
-                  <i className="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="/" className="pl-4">
+                </Link>
+
+                <Link href="/" className="pl-4">
                   <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="/" className="pl-4">
+                </Link>
+                <Link href="/" className="pl-4">
                   <i className="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -1107,4 +1105,4 @@ export const getServerSideProps = async (context) => {
       blogs,
     },
   };
-}
+};
