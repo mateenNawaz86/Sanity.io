@@ -11,9 +11,9 @@ export default function Home({ blogs }) {
   });
 
   const builder = imageUrlBuilder(client);
-  // useEffect(() => {
-  //   // console.log(builder.image(item.blogimage).width(200).url());
-  // }, []);
+  const profile = {
+    name: "Mateen Nawaz",
+  };
 
   return (
     <>
@@ -237,7 +237,7 @@ export default function Home({ blogs }) {
                   </div>
                   <div className="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
                     <h1 className="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-                      Hello I'm Mateen Nawaz!
+                      Hello I'm {profile.name}!
                     </h1>
                     <div className="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
                       <div className="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
@@ -249,19 +249,13 @@ export default function Home({ blogs }) {
                         </div>
                       </div>
                       <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                        <a href="/">
-                          <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
-                        </a>
-                        <a href="/" className="pl-4">
-                          <i className="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
-                        </a>
+                        <Link href="/">
+                          <i className="bx bxl-github text-2xl text-white hover:text-yellow"></i>
+                        </Link>
 
-                        <a href="/" className="pl-4">
+                        <Link href="/" className="pl-4">
                           <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-                        </a>
-                        <a href="/" className="pl-4">
-                          <i className="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -276,7 +270,7 @@ export default function Home({ blogs }) {
                     Who am I?
                   </h2>
                   <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                    I'm Mateen Nawaz, a MERN Stack Developer
+                    I'm {profile.name}, a MERN Stack Developer
                   </h4>
                   <p className="pt-6 font-body leading-relaxed text-grey-20">
                     Energetic, results-driven individual with proven web
@@ -297,19 +291,13 @@ export default function Home({ blogs }) {
                       </div>
                     </div>
                     <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                      <a href="/">
-                        <i className="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"></i>
-                      </a>
-                      <a href="/" className="pl-4">
-                        <i className="bx bxl-twitter text-2xl text-primary hover:text-yellow"></i>
-                      </a>
+                      <Link href="/">
+                        <i className="bx bxl-github text-2xl text-primary hover:text-yellow" />
+                      </Link>
 
-                      <a href="/" className="pl-4">
-                        <i className="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
-                      </a>
-                      <a href="/" className="pl-4">
-                        <i className="bx bxl-instagram text-2xl text-primary hover:text-yellow"></i>
-                      </a>
+                      <Link href="/" className="pl-4">
+                        <i className="bx bxl-linkedin text-2xl text-primary hover:text-yellow" />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -333,7 +321,7 @@ export default function Home({ blogs }) {
                   <div className="pt-6">
                     <div className="flex items-end justify-between">
                       <h4 className="font-body font-semibold uppercase text-black">
-                        Python
+                        JavaScript
                       </h4>
                       <h3 className="font-body text-3xl font-bold text-primary">
                         70%
@@ -349,32 +337,32 @@ export default function Home({ blogs }) {
                   <div className="pt-6">
                     <div className="flex items-end justify-between">
                       <h4 className="font-body font-semibold uppercase text-black">
-                        Javascript
+                        React.Js
                       </h4>
                       <h3 className="font-body text-3xl font-bold text-primary">
-                        98%
+                        70%
                       </h3>
                     </div>
                     <div className="mt-2 h-3 w-full rounded-full bg-lila">
                       <div
                         className="h-3 rounded-full bg-primary"
-                        style={{ width: "98%" }}
+                        style={{ width: "70%" }}
                       ></div>
                     </div>
                   </div>
                   <div className="pt-6">
                     <div className="flex items-end justify-between">
                       <h4 className="font-body font-semibold uppercase text-black">
-                        Figma
+                        Node.Js
                       </h4>
                       <h3 className="font-body text-3xl font-bold text-primary">
-                        91%
+                        50%
                       </h3>
                     </div>
                     <div className="mt-2 h-3 w-full rounded-full bg-lila">
                       <div
                         className="h-3 rounded-full bg-primary"
-                        style={{ width: "91%" }}
+                        style={{ width: "50%" }}
                       ></div>
                     </div>
                   </div>
