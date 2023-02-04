@@ -3,7 +3,7 @@ import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
 
-export default function Home({ blogs }) {
+export default function Home({ blogs, profile }) {
   const client = createClient({
     projectId: "o7156ep0",
     dataset: "production",
@@ -11,9 +11,13 @@ export default function Home({ blogs }) {
   });
 
   const builder = imageUrlBuilder(client);
-  const profile = {
-    name: "Mateen Nawaz",
-  };
+  // const profile = {
+  //   title: "CodeWithMateen",
+  //   name: "Mateen Nawaz",
+  //   github: "https://github.com/mateenNawaz86",
+  //   linkedIn: "https://www.linkedin.com/in/mateen-web-developer/",
+  //   fb: "https://www.facebook.com/profile.php?id=100088208440102",
+  // };
 
   return (
     <>
@@ -79,26 +83,20 @@ export default function Home({ blogs }) {
         <script
           defer
           src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
-        ></script>
+        />
 
-        <script
-          defer
-          src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-        ></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" />
       </Head>
 
       {/* Body data start */}
       <div id="main" className="relative">
         <div>
-          <div
-            className="w-full z-50 top-0 py-3 sm:py-5  absolute
-  "
-          >
+          <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
             <div className="container flex items-center justify-between">
               <div>
                 <Link href="/">
                   <h2 className="cursor-pointer text-2xl font-header font-semibold uppercase text-white hover:text-orange-600 hover:duration-300">
-                    Mateen
+                    {profile.title}
                   </h2>
                 </Link>
               </div>
@@ -173,7 +171,7 @@ export default function Home({ blogs }) {
             </div>
           </div>
 
-          <div className="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden">
+          {/* <div className="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden">
             <div className="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
               <button className="absolute top-0 right-0 mt-4 mr-4">
                 <h2>Mateen </h2>
@@ -217,20 +215,23 @@ export default function Home({ blogs }) {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
 
           <div>
             <div
               className="relative bg-cover bg-center bg-no-repeat py-8"
               style={{ backgroundImage: "url(/assets/img/bg-hero.jpg)" }}
             >
-              <div className="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat"></div>
+              <div className="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat" />
 
               <div className="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
                 <div className="flex flex-col items-center justify-center lg:flex-row">
                   <div className="rounded-full border-8 border-primary shadow-xl">
                     <img
-                      src="/assets/img/blog-author.jpg"
+                      src={`${
+                        builder.image(profile.image).width(200).url() ||
+                        "/assets/img/blog-author.jpg"
+                      } `}
                       className="h-48 rounded-full sm:h-56"
                       alt="author"
                     />
@@ -249,12 +250,12 @@ export default function Home({ blogs }) {
                         </div>
                       </div>
                       <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                        <Link href="/">
-                          <i className="bx bxl-github text-2xl text-white hover:text-yellow"></i>
+                        <Link href={profile.github}>
+                          <i className="bx bxl-github text-2xl text-white hover:text-yellow" />
                         </Link>
 
-                        <Link href="/" className="pl-4">
-                          <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+                        <Link href={profile.linkedIn} className="pl-4">
+                          <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow" />
                         </Link>
                       </div>
                     </div>
@@ -291,11 +292,11 @@ export default function Home({ blogs }) {
                       </div>
                     </div>
                     <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                      <Link href="/">
+                      <Link href={profile.github}>
                         <i className="bx bxl-github text-2xl text-primary hover:text-yellow" />
                       </Link>
 
-                      <Link href="/" className="pl-4">
+                      <Link href={profile.linkedIn} className="pl-4">
                         <i className="bx bxl-linkedin text-2xl text-primary hover:text-yellow" />
                       </Link>
                     </div>
@@ -889,53 +890,6 @@ export default function Home({ blogs }) {
                       </Link>
                     );
                   })}
-
-                  {/* <a href="/post" className="shadow">
-                    <div
-                      style={{
-                        backgroundImage: "url(/assets/img/post-02.png)",
-                      }}
-                      className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-                    >
-                      <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-                      <span className="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">
-                        Read More
-                      </span>
-                    </div>
-                    <div className="bg-white py-6 px-5 xl:py-8">
-                      <span className="block font-body text-lg font-semibold text-black">
-                        My personal productivity system
-                      </span>
-                      <span className="block pt-2 font-body text-grey-20">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </span>
-                    </div>
-                  </a>
-                  <a href="/post" className="shadow">
-                    <div
-                      style={{
-                        backgroundImage: "url(/assets/img/post-03.png)",
-                      }}
-                      className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-                    >
-                      <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-                      <span className="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">
-                        Read More
-                      </span>
-                    </div>
-                    <div className="bg-white py-6 px-5 xl:py-8">
-                      <span className="block font-body text-lg font-semibold text-black">
-                        My year in review 2020
-                      </span>
-                      <span className="block pt-2 font-body text-grey-20">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </span>
-                    </div>
-                  </a> */}
                 </div>
               </div>
             </div>
@@ -1018,11 +972,6 @@ export default function Home({ blogs }) {
             </div>
 
             <div
-              className="h-72 bg-cover bg-center bg-no-repeat sm:h-64 md:h-72 lg:h-96"
-              style={{ backgroundImage: "url(/assets/img/map.png)" }}
-            ></div>
-
-            <div
               className="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24"
               style={{ backgroundImage: "url(/assets/img/bg-cta.jpg)" }}
             >
@@ -1052,18 +1001,15 @@ export default function Home({ blogs }) {
                 © Copyright 2022. All right reserved, ATOM.
               </p>
               <div className="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-                <Link href="/">
-                  <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
-                </Link>
-                <Link href="/" className="pl-4">
-                  <i className="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
+                <Link href={profile.fb}>
+                  <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow" />
                 </Link>
 
-                <Link href="/" className="pl-4">
-                  <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+                <Link href={profile.linkedIn} className="pl-4">
+                  <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow" />
                 </Link>
-                <Link href="/" className="pl-4">
-                  <i className="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
+                <Link href={profile.github} className="pl-4">
+                  <i className="bx bxl-github text-2xl text-white hover:text-yellow" />
                 </Link>
               </div>
             </div>
@@ -1084,13 +1030,15 @@ export const getServerSideProps = async (context) => {
 
   // GROQ code below. GROQ is simply use to run a sanity query
   const query = `*[_type == "blog" ][0...3]`;
+  const profileQuery = `*[_type == "profile" ][0]`;
 
   // Here fetch is a sanity fetch function
   const blogs = await client.fetch(query);
-  // return a list of blogs
+  const profile = await client.fetch(profileQuery);
   return {
     props: {
       blogs,
+      profile,
     },
   };
 };
