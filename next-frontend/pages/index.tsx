@@ -2,6 +2,7 @@ import Head from "next/head";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 
 export default function Home({ blogs, profile }) {
   const client = createClient({
@@ -91,7 +92,7 @@ export default function Home({ blogs, profile }) {
       {/* Body data start */}
       <div id="main" className="relative">
         <div>
-          <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
+          {/* <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
             <div className="container flex items-center justify-between">
               <div>
                 <Link href="/">
@@ -169,7 +170,8 @@ export default function Home({ blogs, profile }) {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
+          <Navbar profile={profile.title} />
 
           {/* <div className="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden">
             <div className="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
@@ -408,26 +410,27 @@ export default function Home({ blogs, profile }) {
                   <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                     <div className="hidden group-hover:block">
                       <img
-                        src="/assets/img/icon-content-white.svg"
-                        alt="content marketing icon"
+                        src="/assets/img/icon-graphics-white.svg"
+                        alt="Graphic Design icon"
                       />
                     </div>
                     <div className="block group-hover:hidden">
                       <img
-                        src="/assets/img/icon-content-black.svg"
-                        alt="content marketing icon"
+                        src="/assets/img/icon-graphics-black.svg"
+                        alt="Graphic Design icon"
                       />
                     </div>
                   </div>
                   <div className="text-center">
                     <h3 className="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                      Technical Writing
+                      Web Design
                     </h3>
                     <p className="text-grey pt-4 text-sm group-hover:text-white md:text-base">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </p>
                   </div>
                 </div>
+
                 <div className="group rounded px-8 py-12 shadow hover:bg-primary">
                   <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                     <div className="hidden group-hover:block">
@@ -446,6 +449,30 @@ export default function Home({ blogs, profile }) {
                   <div className="text-center">
                     <h3 className="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
                       Mobile Development
+                    </h3>
+                    <p className="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+                <div className="group rounded px-8 py-12 shadow hover:bg-primary">
+                  <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                    <div className="hidden group-hover:block">
+                      <img
+                        src="/assets/img/icon-content-white.svg"
+                        alt="content marketing icon"
+                      />
+                    </div>
+                    <div className="block group-hover:hidden">
+                      <img
+                        src="/assets/img/icon-content-black.svg"
+                        alt="content marketing icon"
+                      />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                      Technical Writing
                     </h3>
                     <p className="text-grey pt-4 text-sm group-hover:text-white md:text-base">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -494,30 +521,6 @@ export default function Home({ blogs, profile }) {
                   <div className="text-center">
                     <h3 className="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
                       Graphic Design
-                    </h3>
-                    <p className="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </p>
-                  </div>
-                </div>
-                <div className="group rounded px-8 py-12 shadow hover:bg-primary">
-                  <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                    <div className="hidden group-hover:block">
-                      <img
-                        src="/assets/img/icon-graphics-white.svg"
-                        alt="Graphic Design icon"
-                      />
-                    </div>
-                    <div className="block group-hover:hidden">
-                      <img
-                        src="/assets/img/icon-graphics-black.svg"
-                        alt="Graphic Design icon"
-                      />
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <h3 className="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                      Web Design
                     </h3>
                     <p className="text-grey pt-4 text-sm group-hover:text-white md:text-base">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.

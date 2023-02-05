@@ -1,16 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = ({ profile }) => {
   return (
     <div className="p-5 bg-[#483795]">
       <div className="container flex items-center justify-between ">
         <div>
           <Link href="/">
             <h2 className="cursor-pointer text-2xl font-header font-semibold uppercase text-white  hover:text-orange-600 hover:duration-300">
-              Mateen
+              {profile}
             </h2>
           </Link>
         </div>
